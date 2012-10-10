@@ -27,7 +27,7 @@
   insteadOf = drupalsand://
 [url "http://git.trellon.org/"]
   insteadOf = trellon://
-[url "git://github.com/"]
+[url "git@github.com:"]
   insteadOf = github://
 [url "git@github.com:barraponto/"]
   insteadOf = barraponto://
