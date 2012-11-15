@@ -1,13 +1,16 @@
 [color]
   ui = auto
 [user]
-  name = Capi Etheriel
-  email = barraponto@gmail.com
+  name = Renato Vasconcellos
+  email = revagomes@gmail.com
 [alias]
   co = checkout
   ci = commit
   st = status
   br = branch
+  df = diff
+  ps = push
+  pl = pull
   ff = merge --ff-only
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   changelog = log --pretty=format:\" * %s\"
@@ -21,19 +24,15 @@
   insteadOf = drupal://
 [url "http://git.drupal.org/sandbox/"]
   insteadOf = drupalsand://
-[url "http://git.trellon.org/"]
-  insteadOf = trellon://
 [url "git://github.com/"]
   insteadOf = github://
-[url "git@github.com:barraponto/"]
-  insteadOf = barraponto://
-[url "git@github.com:umamao/"]
-  insteadOf = umamao://
+[url "git@github.com:revagomes/"]
+  insteadOf = revagomes://
 [receive]
 	denyNonFastForwards = true
 [core]
   excludesfile = ~/.gitignore
 [github]
-	user = barraponto
+	user = revagomes
 [diff]
   mnemonicprefix = true
