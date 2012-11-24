@@ -3,3 +3,8 @@ node_modules/
 *~
 .*.swp
 doc/tags
+.DS_Store
+.Thumbs.db
+*.sublime-projectcompletions
+*.sublime-workspace
+*.sublime-project
