@@ -1,6 +1,6 @@
 [user]
-	email = revagomes@gmail.com
-	name = Renato V. Gomes
+  name = Renato Vasconcellos
+  email = revagomes@gmail.com
 [color]
 	ui = auto
 [alias]
@@ -25,16 +25,10 @@
   insteadOf = drupal://
 [url "http://git.drupal.org/sandbox/"]
   insteadOf = drupalsand://
-[url "http://git.trellon.org/"]
-  insteadOf = trellon://
-[url "git@github.com:"]
+[url "git://github.com/"]
   insteadOf = github://
-[url "git@github.com:barraponto/"]
-  insteadOf = barraponto://
 [url "git@github.com:revagomes/"]
   insteadOf = revagomes://
-[url "git@github.com:umamao/"]
-  insteadOf = umamao://
 [receive]
 	denyNonFastForwards = true
 [core]

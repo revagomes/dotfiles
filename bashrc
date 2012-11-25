@@ -86,3 +86,84 @@ PATH=$PATH:$HOME/.rvm/bin
 
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+alias dr="drush"
+
+# some more ls aliases
+alias ll='ls -alFh'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Directory navigation aliases
+alias ..='cd ..'
+alias ...='..;..'
+alias ....='..;..;..'
+alias .....='..;..;..;..'
+alias ......='..;..;..;..;..'
+
+# Extracting files 
+
+extract () {
+     if [ -f $1 ] ; then
+         case $1 in
+             *.tar.bz2)   tar xjf $1        ;;
+             *.tar.gz)    tar xzf $1     ;;
+             *.bz2)       bunzip2 $1       ;;
+             *.rar)       rar x $1     ;;
+             *.gz)        gunzip $1     ;;
+             *.tar)       tar xf $1        ;;
+             *.tbz2)      tar xjf $1      ;;
+             *.tgz)       tar xzf $1       ;;
+             *.zip)       unzip $1     ;;
+             *.Z)         uncompress $1  ;;
+             *.7z)        7z x $1    ;;
+             *)           echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+
+# Dev functions
+
+www () {
+  cd "$(_www_root)$1"
+}
+
+_www_root () {
+  echo '/var/www/'
+}
+
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;36m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w:$(__git_ps1)\[\033[00m\]\$ '
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+function proml {
+  local   DARK_BLUE="\[\033[0;34m\]"
+  local  LIGHT_BLUE="\[\033[1;36m\]"
+  local        BLUE="\[\033[1;34m\]"
+  local         RED="\[\033[0;31m\]"
+  local   LIGHT_RED="\[\033[1;31m\]"
+  local       GREEN="\[\033[0;32m\]"
+  local LIGHT_GREEN="\[\033[1;32m\]"
+  local       WHITE="\[\033[1;37m\]"
+  local  LIGHT_GRAY="\[\033[0;37m\]"
+  case $TERM in
+    xterm*)
+    TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+    ;;
+    *)
+    TITLEBAR=""
+    ;;
+  esac
+
+PS1="${TITLEBAR}\
+$DARK_BLUE[$GREEN\$(date +%H:%M)$DARK_BLUE]\
+$DARK_BLUE[$RED\u@\h$DARK_BLUE:$BLUE\w$GREEN\$(parse_git_branch)$DARK_BLUE]\
+$GREEN\$$LIGHT_GRAY "
+PS2='> '
+PS4='+ '
+}
+proml
