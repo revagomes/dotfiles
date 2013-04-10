@@ -20,6 +20,9 @@
   amend = commit --amend
   newbranch = checkout -b
   nb = checkout -b
+  ignore = !git update-index --assume-unchanged 
+  unignore = !git update-index --no-assume-unchanged
+  ignored = !git ls-files -v | grep "^[[:lower:]]"
 [url "http://git.drupal.org/project/"]
   insteadOf = drupal://
 [url "http://git.drupal.org/sandbox/"]
@@ -29,10 +32,10 @@
 [url "git@github.com:revagomes/"]
   insteadOf = revagomes://
 [receive]
-	denyNonFastForwards = true
+  denyNonFastForwards = true
 [core]
   excludesfile = ~/.gitignore
 [github]
-	user = revagomes
+  user = revagomes
 [diff]
   mnemonicprefix = true
