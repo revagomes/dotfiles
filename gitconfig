@@ -39,3 +39,5 @@
   user = revagomes
 [diff]
   mnemonicprefix = true
+[push]
+	default = current

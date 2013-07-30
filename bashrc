@@ -36,7 +36,7 @@ export HISTCONTROL=ignoredups
 # ubuntuforums: leave some commands out of history log
 export HISTIGNORE="&:??:[ ]*:clear:exit:logout"
 
-# barraponto: set vim as editor
+# revagomes: set vim as editor
 export EDITOR=vim
 
 # archwiki: run keygen to automatically add ssh
@@ -73,19 +73,22 @@ fi
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 
 #perlbrew: source the perlbrew
-source ~/perl5/perlbrew/etc/bashrc
+#source ~/perl5/perlbrew/etc/bashrc
 
-# nvm: source the nvm
-source ~/.local/opt/nvm/nvm.sh
+# nvm: source the nvm.sh
+#source ~/.local/opt/nvm/nvm.sh
 
 # rvm: add rvm to the path
 PATH=$PATH:$HOME/.rvm/bin
 
 # This loads RVM into a shell session.
-[[ -s "/home/barraponto/.rvm/scripts/rvm" ]] && source "/home/barraponto/.rvm/scripts/rvm"
+[[ -s "/home/revagomes/.rvm/scripts/rvm" ]] && source "/home/revagomes/.rvm/scripts/rvm"
 
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+#Selenium: Chromium WebDriver
+PATH=$PATH:/opt/seleniumChromium
 
 alias dr="drush"
 
@@ -101,7 +104,9 @@ alias ....='..;..;..'
 alias .....='..;..;..;..'
 alias ......='..;..;..;..;..'
 
-# Extracting files 
+
+
+# Extracting files
 
 extract () {
      if [ -f $1 ] ; then
@@ -150,20 +155,47 @@ function proml {
   local LIGHT_GREEN="\[\033[1;32m\]"
   local       WHITE="\[\033[1;37m\]"
   local  LIGHT_GRAY="\[\033[0;37m\]"
-  case $TERM in
-    xterm*)
-    TITLEBAR='\[\033]0;\u@\h:\w\007\]'
-    ;;
-    *)
-    TITLEBAR=""
-    ;;
-  esac
+  local   C_DEFAULT="\[\033[m\]"
+  local     C_WHITE="\[\033[1m\]"
+  local     C_BLACK="\[\033[30m\]"
+  local       C_RED="\[\033[31m\]"
+  local C_GREEN="\[\033[32m\]"
+  local C_YELLOW="\[\033[33m\]"
+  local C_BLUE="\[\033[34m\]"
+  local C_PURPLE="\[\033[35m\]"
+  local C_CYAN="\[\033[36m\]"
+  local C_LIGHTGRAY="\[\033[37m\]"
+  local C_DARKGRAY="\[\033[1;30m\]"
+  local C_LIGHTRED="\[\033[1;31m\]"
+  local C_LIGHTGREEN="\[\033[1;32m\]"
+  local C_LIGHTYELLOW="\[\033[1;33m\]"
+  local C_LIGHTBLUE="\[\033[1;34m\]"
+  local C_LIGHTPURPLE="\[\033[1;35m\]"
+  local C_LIGHTCYAN="\[\033[1;36m\]"
+  local C_BG_BLACK="\[\033[40m\]"
+  local C_BG_RED="\[\033[41m\]"
+  local C_BG_GREEN="\[\033[42m\]"
+  local C_BG_YELLOW="\[\033[43m\]"
+  local C_BG_BLUE="\[\033[44m\]"
+  local C_BG_PURPLE="\[\033[45m\]"
+  local C_BG_CYAN="\[\033[46m\]"
+  local C_BG_LIGHTGRAY="\[\033[47m\]"
+#  case $TERM in
+#    xterm*)
+#    TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+#    ;;
+#    *)
+#    TITLEBAR=""
+#    ;;
+#  esac
 
-PS1="${TITLEBAR}\
-$DARK_BLUE[$GREEN\$(date +%H:%M)$DARK_BLUE]\
+#PS1="${TITLEBAR}\
+PS1="$DARK_BLUE[$GREEN\$(date +%H:%M)$DARK_BLUE]\
 $DARK_BLUE[$RED\u@\h$DARK_BLUE:$BLUE\w$GREEN\$(parse_git_branch)$DARK_BLUE]\
-$GREEN\$$LIGHT_GRAY "
+\n$LIGHT_GREEN\$ $LIGHT_GRAY"
 PS2='> '
 PS4='+ '
 }
 proml
+
+force_color_prompt=yes
