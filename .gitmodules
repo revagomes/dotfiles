@@ -69,7 +69,7 @@
 	url = git://github.com/garbas/vim-snipmate.git
 [submodule "drush/aliases"]
 	path = drush/aliases
-	url = git@github.com:barraponto/drush_alias.git 
+	url = git@github.com:barraponto/drush_alias.git
 [submodule "vim-colors-solarized"]
 	path = vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
@@ -112,3 +112,9 @@
 [submodule "vim/bundle/less"]
 	path = vim/bundle/less
 	url = git://github.com/groenewege/vim-less.git
+[submodule "drush/modules/coder"]
+	path = drush/modules/coder
+	url = http://git.drupal.org/project/coder.git
+[submodule "drush/modules/drush_sup"]
+	path = drush/modules/drush_sup
+	url = http://git.drupal.org/project/drush_sup.git
