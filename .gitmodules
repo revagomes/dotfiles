@@ -118,3 +118,6 @@
 [submodule "drush/modules/drush_sup"]
 	path = drush/modules/drush_sup
 	url = http://git.drupal.org/project/drush_sup.git
+[submodule "drush/modules/drush_clone"]
+	path = drush/modules/drush_clone
+	url = http://git.drupal.org/project/drush_clone.git
