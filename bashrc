@@ -56,6 +56,11 @@ if [ -f /etc/debian_version ]; then
  . /etc/bash_completion
 fi
 
+# load default drush aliases
+if [ -f ~/.drush_bashrc ] ; then
+    . ~/.drush_bashrc
+fi
+
 # nuvoleweb: load aliases from .drush_aliases
 if [ -f ~/.drush_aliases ]; then
     . ~/.drush_aliases
@@ -93,6 +98,7 @@ PATH=$PATH:/opt/seleniumChromium
 alias dr="drush"
 
 # some more ls aliases
+alias ls='ls --color=auto'
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
