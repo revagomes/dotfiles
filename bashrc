@@ -110,7 +110,7 @@ alias ....='..;..;..'
 alias .....='..;..;..;..'
 alias ......='..;..;..;..;..'
 
-
+alias ccc='compass clean && compass compile -e development && drcc'
 
 # Extracting files
 
