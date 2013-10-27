@@ -82,9 +82,9 @@
 [submodule "vim/bundle/drupal-snippets"]
 	path = vim/bundle/drupal-snippets
 	url = git://github.com/tanarurkerem/drupal-snippets.git
-[submodule "vim/bundle/snipmate-snippets"]
-	path = vim/bundle/snipmate-snippets
-	url = git://github.com/honza/snipmate-snippets.git
+[submodule "vim/bundle/vim-snippets"]
+	path = vim/bundle/vim-snippets
+	url = git://github.com/honza/vim-snippets.git
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
@@ -121,3 +121,6 @@
 [submodule "drush/modules/drush_clone"]
 	path = drush/modules/drush_clone
 	url = http://git.drupal.org/project/drush_clone.git
+[submodule "drush/modules/kraftwagen"]
+	path = drush/modules/kraftwagen
+	url = git://github.com/kraftwagen/kraftwagen.git
